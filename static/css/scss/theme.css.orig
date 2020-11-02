@@ -1,0 +1,216 @@
+body { font-family: 'Poppins', sans-serif; font-size: 14px; }
+
+@font-face { font-family: 'Poppins Regular'; font-style: normal; font-weight: normal; src: local("Poppins Regular"), url("Poppins-Regular.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins Italic'; font-style: normal; font-weight: normal; src: local("Poppins Italic"), url("Poppins-Italic.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins Thin'; font-style: normal; font-weight: normal; src: local("Poppins Thin"), url("Poppins-Thin.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins Thin Italic'; font-style: normal; font-weight: normal; src: local("Poppins Thin Italic"), url("Poppins-ThinItalic.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins ExtraLight'; font-style: normal; font-weight: normal; src: local("Poppins ExtraLight"), url("Poppins-ExtraLight.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins ExtraLight Italic'; font-style: normal; font-weight: normal; src: local("Poppins ExtraLight Italic"), url("Poppins-ExtraLightItalic.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins Light'; font-style: normal; font-weight: normal; src: local("Poppins Light"), url("Poppins-Light.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins Light Italic'; font-style: normal; font-weight: normal; src: local("Poppins Light Italic"), url("Poppins-LightItalic.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins Medium'; font-style: normal; font-weight: normal; src: local("Poppins Medium"), url("Poppins-Medium.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins Medium Italic'; font-style: normal; font-weight: normal; src: local("Poppins Medium Italic"), url("Poppins-MediumItalic.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins SemiBold'; font-style: normal; font-weight: normal; src: local("Poppins SemiBold"), url("Poppins-SemiBold.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins SemiBold Italic'; font-style: normal; font-weight: normal; src: local("Poppins SemiBold Italic"), url("Poppins-SemiBoldItalic.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins Bold'; font-style: normal; font-weight: normal; src: local("Poppins Bold"), url("Poppins-Bold.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins Bold Italic'; font-style: normal; font-weight: normal; src: local("Poppins Bold Italic"), url("Poppins-BoldItalic.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins ExtraBold'; font-style: normal; font-weight: normal; src: local("Poppins ExtraBold"), url("Poppins-ExtraBold.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins ExtraBold Italic'; font-style: normal; font-weight: normal; src: local("Poppins ExtraBold Italic"), url("Poppins-ExtraBoldItalic.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins Black'; font-style: normal; font-weight: normal; src: local("Poppins Black"), url("Poppins-Black.woff") format("woff"); }
+
+@font-face { font-family: 'Poppins Black Italic'; font-style: normal; font-weight: normal; src: local("Poppins Black Italic"), url("Poppins-BlackItalic.woff") format("woff"); }
+
+.login_logo { font-size: 2.1rem; font-weight: 300; margin-bottom: .9rem; text-align: center; }
+
+.login_logo a { color: #333; }
+
+.login_page { align-items: center; background: #0000003b; display: flex; height: 100vh; justify-content: center; }
+
+.login_box { width: 450px; }
+
+.login_box .card { border: 0; }
+
+.login_box .card .login_card_body { background: #fff; border-top: 0; color: #666; padding: 0; border: 0; }
+
+.login_box .card .login_card_body .login_box_msg { margin: 0; padding: 10px; text-align: center; background: #d2d6ab; font-size: 24px; color: #333; }
+
+.login_box .card .login_card_body .login_form { padding: 50px; margin: 0; }
+
+.login_box .card .login_card_body .input-group .form-control { font-size: 13px; font-weight: 300; height: calc(2.25rem + 2px); padding: 0.375rem 0.75rem; }
+
+.login_box .card .login_card_body .input-group .form-control:focus { box-shadow: none; }
+
+.login_box .card .login_card_body .input-group .form-control:focus ~ .input-group-append .input-group-text { border-color: #a5ad7a; }
+
+.login_box .card .login_card_body .input-group .form-control.is-valid:focus { box-shadow: none; }
+
+.login_box .card .login_card_body .input-group .form-control.is-valid ~ .input-group-append .input-group-text { border-color: green; }
+
+.login_box .card .login_card_body .input-group .form-control.is-invalid:focus { box-shadow: none; }
+
+.login_box .card .login_card_body .input-group .form-control.is-invalid ~ .input-group-append .input-group-text { border-color: red; }
+
+.login_box .card .login_card_body .input-group .input-group-text { background-color: transparent; border-left: 0; color: #777; }
+
+.login_box .card .login_card_body label { font-size: 13px; font-weight: 300; }
+
+<<<<<<< Updated upstream
+.nav-sidebar .nav-link p { display: inline-block; margin: 0; color: #54667a; font-size: 12px; font-weight: 300; letter-spacing: 0.3; }
+
+.store__management .store_details .nav-tabs { border-bottom: 1px solid #d2d6aa; }
+
+.store__management .store_details .nav-tabs li:first-child { margin-left: 20px; }
+
+.store__management .store_details .nav-tabs li .nav-link { border-top-left-radius: 0; border-top-right-radius: 0; color: #54667a; font-size: 14px; font-weight: 300; }
+
+.store__management .store_details .nav-tabs li .nav-link.active { position: relative; border-color: #d2d6aa #d2d6aa #fff; border-top-color: #808953; color: #808953; }
+
+.store__management .store_details .nav-tabs li .nav-link.active:after { content: ""; position: absolute; top: -1px; left: 0; width: 100%; height: 2px; background: #808953; }
+
+.store__management .store_details .tab-content { padding: 20px; }
+
+.store__management .store_details .tab-content .tab_section { border-bottom: 1px solid #d2d6aa; padding: 0 0 20px; margin: 0 0 30px; }
+
+.org__section .info-box { border-radius: 0px; box-shadow: none; border: 1px solid #d2d6aa; min-height: unset; cursor: pointer; }
+
+.org__section .info-box:hover { background: #f9fafc; border: 1px solid rgba(0, 0, 0, 0.125); }
+
+.org__section .info-box .info-box-icon { border-radius: 0px; width: 52px; }
+
+.org__section .info-box .info-box-icon.bg_franchise { background-color: #d2d6ab; }
+
+.org__section .info-box .info-box-content .info-box-text { color: #54667a; font-size: 14px; font-weight: 300; letter-spacing: 0.3; text-transform: uppercase; }
+
+.org__section .store_listings { display: none; }
+
+.org__section .store_listings ul { padding: 0; list-style: none; }
+
+.org__section .store_listings ul li { display: inline-block; width: auto; height: 100%; padding: 5px 10px; box-sizing: border-box; cursor: pointer; margin: 3px 2px; text-align: center; border: 1px solid rgba(0, 0, 0, 0.125); background: #fff; font-weight: 300; font-size: 13px; color: #707070; text-transform: capitalize; letter-spacing: 0.3; }
+
+.org__section .store_listings ul li:hover { background: #d2d6ab; color: #fff; }
+
+.org__section .store_info { display: none; padding: 10px; border: 1px solid rgba(0, 0, 0, 0.125); }
+
+.org__section .hr_division { display: none; }
+=======
+.nav-sidebar .nav-link p { display: inline-block; margin: 0; color: #54667a; font-size: 14px; font-weight: 300; letter-spacing: 0.3; }
+>>>>>>> Stashed changes
+
+.content-wrapper { background: #f9fafc; padding: 20px; }
+
+.btn { font-weight: 300; font-size: 14px; line-height: 1.7; letter-spacing: 0.5; }
+
+.btn-primary { color: #fff; background-color: #a4ac79; border-color: #a4ac79; box-shadow: none; }
+
+.btn-primary:hover { background-color: #808953; border-color: #a4ac79; }
+
+.btn-primary:focus { background-color: #808953; border-color: #808953; }
+
+.btn-secondary { color: #fff; background-color: #6c757d; border-color: #6c757d; box-shadow: none; }
+
+.btn-secondary:hover { background-color: #5a6268; border-color: #6c757d; }
+
+.btn-secondary:focus { background-color: #5a6268; border-color: #5a6268; }
+
+span.required { color: #ff0000; }
+
+.form_select { position: relative; }
+
+.form_select:after { content: '\f107'; position: absolute; top: 10px; right: 0; padding: 0 0.6em; background: transparent; cursor: pointer; pointer-events: none; -webkit-transition: .25s all ease; -o-transition: .25s all ease; transition: .25s all ease; color: #ced4da; font: normal normal normal 20px/1 FontAwesome; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.form_select select { -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; -webkit-appearance: none; -moz-appearance: none; appearance: none; position: relative; }
+
+.custom_checkbox { display: block; position: relative; cursor: pointer; font-size: 14px; color: #1d1d1b; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; float: none !important; margin: 10px 0 !important; padding-left: 30px; font-weight: normal; }
+
+.custom_checkbox input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
+
+.custom_checkbox .checkmark { position: absolute; top: 0; left: 0; height: 20px; width: 20px; background-color: #fff; border: 2px solid #a4ac79; border-radius: 2px; }
+
+.custom_checkbox .checkmark:after { content: ""; position: absolute; display: none; transition: all 0.3s; left: 5px; top: 1px; width: 6px; height: 11px; border: solid #a4ac79; border-width: 0 2px 2px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+
+.custom_checkbox input:checked ~ .checkmark { background-color: #a4ac79; border: 2px solid #a4ac79; border-radius: 2px; }
+
+.custom_checkbox input:checked ~ .checkmark:after { display: block; }
+
+.m-0 { margin: 0 !important; }
+
+.no_border { border: 0px !important; }
+
+.block_title { padding-bottom: 0px; border-bottom: 1px solid #d2d6aa; margin-bottom: 20px; }
+
+.block_subtitle { padding-bottom: 0px; margin-bottom: 20px; }
+
+.block_subtitle a span { display: inline-block; color: #54667a; font-size: 13px; margin-left: 10px; }
+
+.block_subtitle a span:hover { color: #808953; }
+
+.block_subtitle a i { color: #808953; font-weight: 300; font-size: 12px; }
+
+.block_content { padding: 0px; }
+
+.block_content .card { border: 1px solid rgba(0, 0, 0, 0.125); border-radius: 0px; box-shadow: none; }
+
+.block_content .card .card-body form { margin-bottom: 0px; }
+
+.block_content label { display: inline-block; margin-bottom: 0 !important; color: #707070; font-size: 14px; font-weight: 300; letter-spacing: 0.5; }
+
+.block_content h1, .block_content .h1 { font-size: 18px; font-weight: 400; }
+
+.block_content h2, .block_content .h2 { font-size: 1rem; color: #333; }
+
+.block_content h3, .block_content .h3 { font-size: 14px; color: #333; }
+
+.block_content .form-control { font-size: 12px; font-weight: 300; color: #707070; }
+
+.block_content .errormsg { color: #ff0000; font-size: 12px; font-weight: 300; }
+
+.block_content .table { font-size: 14px; color: #707070; }
+
+.block_content .table thead th { vertical-align: bottom; border-bottom: 2px solid #dee2e6; font-size: 14px !important; font-weight: 400 !important; color: #333 !important; background: #f8f8f8; }
+
+.block_content .table tbody td { font-weight: 300; font-size: 13px; color: #707070; }
+
+.block_content p { font-weight: 300; font-size: 13px; color: #707070; }
+
+.block_content hr { border-top: 1px solid #d2d6aa; }
+
+/*User Dashboard*/
+.user__dashboard .d__box { border: 1px solid rgba(189, 153, 105, 0.4); border-radius: 0; box-shadow: none; display: block; margin-bottom: 20px; position: relative; }
+
+.user__dashboard .d__box .box_inner { padding: 20px 15px; }
+
+.user__dashboard .d__box .box_inner .box_icon { float: left; }
+
+.user__dashboard .d__box .box_inner h3, .user__dashboard .d__box .box_inner .h3 { font-size: 30px; color: #1d1d1b; }
+
+.user__dashboard .d__box .box_inner p { color: #54667a; font-size: 16px; }
+
+.min_width { min-width: 100px; }
+
+.action_link { margin: 2px; }
+
+.add_items { cursor: pointer; }
+
+.add_items span { display: inline-block; color: #54667a; font-size: 13px; margin-left: 10px; }
+
+.add_items span:hover { color: #808953; }
+
+.add_items i { color: #808953; font-weight: 300; font-size: 12px; }
+
+/*# sourceMappingURL=theme.css.map */

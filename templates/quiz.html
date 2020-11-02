@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}| Test{% endblock title %}
+{% block css %}
+    <style type="css/stylesheet">
+        .question>p{
+            margin-bottom: 0px;
+        }
+    </style>
+{% endblock css %}
+{% block content %}
+<section class="block_title row">
+   <h1 class="col-md-6"><span class="ml-auto">Questions</span></h1>
+</section>
+<section class="block_content">
+    <div class="container-fluid p-0">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <div class="col-12 col-md-12">
+                        <div class="row m-t-40">
+                            <form action="{% url 'result-view' %}" method="post" style="width: 100%;" id="id_form">
+                                {% csrf_token %}
+                                {% if question_list %}
+                                    {% for question in question_list %}
+                                        <div class="col-md-12">
+                                            <div class="" style="margin-top: 10px;margin-bottom: 15px;">
+                                                <label class="question pull-left" style="width: 95%;">{{ forloop.counter }}. {{ question.question|safe }}</label>
+                                            </div>
+                                            {% for answer_option in question.get_answer_options %}
+                                                <div class="col col-md-3">
+                                                    <div style="display: grid;padding: 0 10px 0;">
+                                                        <label><input type="radio" name="question_{{ question.id }}" value="{{ answer_option.id }}">{{ answer_option.option_text }}</label>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% endfor %}
+                                        <div class="col-md-12" style="margin-top: 10px;">
+                                            <div class="row m-0 justify-content-md-end">
+                                                <div class="d-flex align-items-center">
+                                                    <a class="btn btn-primary pull-right ml-2" href="" style="color: black;">Reset</a>
+                                                    <button type="submit" class="btn btn-primary pull-right" style="color: black;margin-left:5px;">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                {% else %}
+                                    <div class="col">
+                                        <div style="display: grid;padding: 10px 0;">
+                                            <label>No Questions found.</label>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% block jsscript %}
+{% endblock jsscript %}

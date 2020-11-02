@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}| Results{% endblock title %}
+{% block css %}
+    <style type="css/stylesheet">
+        .question>p{
+            margin-bottom: 0px;
+        }
+    </style>
+{% endblock css %}
+{% block content %}
+<section class="block_title row">
+   <h1 class="col-md-6"><span class="ml-auto">Quiz Results</span></h1>
+</section>
+<section class="block_content">
+    <div class="container-fluid p-0">
+        {% for result_obj in result_list %}
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div class="col-12 col-md-12">
+                            <div class="row m-t-40">
+                                <div class="col-md-12">
+                                    <div class="" style="margin-top: 10px;margin-bottom: 15px;">
+                                        <label class="question pull-left" style="width: 95%;">No of Questions: {{ result_obj.no_of_questions }}</label>
+                                        <label class="question pull-left" style="width: 95%;">Attended: {{ result_obj.attended }}</label>
+                                        <label class="question pull-left" style="width: 95%;">Correct Ans: {{ result_obj.correct_ans }}</label>
+                                        <label class="question pull-left" style="width: 95%;">Score: {{ result_obj.achieved_score }} / {{ result_obj.total_score }}</label>
+                                        <label class="question pull-left" style="width: 95%;">Time: {{ result_obj.created_on }}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="card">
+            <div class="card-body">
+                {% include 'includes/pagination.html' with page_obj=page_obj %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% block jsscript %}
+{% endblock jsscript %}

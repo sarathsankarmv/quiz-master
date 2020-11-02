@@ -1,0 +1,25 @@
+{% load filter_tags %}
+{% if page_obj %}
+    <div class="dataTables_wrapper">
+        <div class="dataTables_info" id="myTable_info" role="status" aria-live="polite">
+            Showing {{ page_obj.start_index }} to {{ page_obj.end_index }} of {{ page_obj.paginator.count }}
+        </div>
+        <div class="dataTables_paginate paging_simple_numbers" id="myTable_paginate">
+            {% if page_obj.has_previous %}
+                <a href="?{% get_parameters page %}page={{ page_obj.previous_page_number }}" title="Previous" class="paginate_button previous disabled" aria-controls="myTable" data-dt-idx="0" tabindex="-1">Previous</a>
+            {% endif %}
+            <span>
+                {% for i in page_obj.paginator.page_range %}
+                    {% if page_obj.number == i %}
+                        <a class="paginate_button current" aria-controls="myTable" data-page="{{ i }}" title="{{ i }}">{{ i }}</a>
+                    {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+                        <a href="?{% get_parameters page %}page={{ i }}" class="paginate_button" aria-controls="myTable" data-page="{{ i }}" title="{{ i }}">{{ i }}</a>
+                    {% endif %}
+                {% endfor %}
+            </span>
+            {% if page_obj.has_next %}
+                <a href="?{% get_parameters page %}page={{ page_obj.next_page_number }}" title="Next" class="paginate_button next" aria-controls="myTable">Next</a>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

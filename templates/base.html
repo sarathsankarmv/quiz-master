@@ -1,0 +1,55 @@
+{% load static %}
+{% load sass_tags %}
+<html>
+    <head>
+        <title>Quiz Test {% block title %} {% endblock title %} </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/common.css' %}" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
+        <link href="{% static 'css/font_icon.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/datepicker/day.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/datepicker/datepicker.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/dual_listbox.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% sass_src 'scss/theme.scss' %}" rel="stylesheet" type="text/css" />
+        {% block css %}
+        {% endblock css %}
+    </head>
+    <body class="hold-transition sidebar-mini layout-navbar-fixed">
+        <div class="wrapper">
+            {% include "header.html" %}            
+            {% include "sidebar.html" %} 
+            <div class="content-wrapper">
+                {% block content %}
+                {% endblock content %} 
+            </div>
+        </div>
+    </body>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/common.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/select2.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/validation_js/jquery.validate.min.js'%}" ></script>
+    <script src="{% static 'js/datepicker/moment.js' %}"></script>
+    <script src="{% static 'js/datepicker/days.js' %}"></script>
+    <script src="{% static 'js/datepicker/datepicker.js' %}"></script>
+    <script src="{% static 'js/dual_listbox.js' %}"></script>
+    <script src="{% static 'js/accordion/accordion.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            pathname = "{{ request.get_full_path }}"; 
+            $('.sidebar .nav-item').each(function(){
+                target_url = $(this).find('a').attr('href');
+                if ( !target_url ) return;
+                if(target_url == pathname){
+                    $(this).find('a').addClass('active');
+                    $(this).parents('li').addClass('menu-open');
+                }
+            });
+            
+            $('.select2').select2();
+        });
+    </script>
+    {% block jsscript %}
+    {% endblock jsscript %}
+</html>

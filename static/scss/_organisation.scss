@@ -1,0 +1,88 @@
+.org__section{
+    .info-box{
+        border-radius: 0px;
+        box-shadow: none;
+        border:$border_green;
+        min-height: unset;
+        cursor: pointer;
+        padding: $padding / 4;
+        &.franchise_box{
+            border:$border;
+            margin: 5px 7.5px 5px;
+            background: $light_white;
+        }
+        &.store_box{
+            border:$border;
+            margin: 5px 7.5px 5px;
+            background: #f9fafc;
+        }
+        &:hover{
+            background: $white;
+            border:$border;
+        }
+        .info-box-icon{
+            border-radius: 0px;
+            width:52px;
+    
+            &.bg_franchise{
+                background-color: #f9d6c980;
+                display: none;
+            }
+            &.bg_stores{
+                background-color: #f3e5c3;
+                display: none;
+            }
+        }
+        .info-box-content{
+            .info-box-text{
+                color: $linkcolor;
+                font-size: $default_font_size;
+                font-weight: $font_weight_300;
+                letter-spacing: 0.3;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .store_listings{
+        display: none;
+        ul{
+            padding: 0;
+            list-style: none;
+            li{
+                display: inline-block;
+                width: auto;
+                height: 100%;
+                padding: 5px 10px;
+                box-sizing: border-box;
+                cursor: pointer;
+                margin: 3px 2px;
+                text-align: center;
+                border: $border;
+                background: $white;
+                font-weight: $font_weight_300;
+                font-size: $small_font_1x;
+                color:$text_color;
+                text-transform: capitalize;
+                letter-spacing: 0.3;
+                &:hover{
+                    background: $light_green_s;
+                    color: $white;
+                }
+            }
+        }
+    }
+    .franchise_store_info{
+        display: none; 
+        padding: 10px;
+        border: $border;               
+    }
+    .store_info{
+        display: none; 
+        padding: 10px;
+        border: $border;               
+    }
+    .hr_division{
+        display: none;
+    }
+}

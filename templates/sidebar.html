@@ -1,0 +1,36 @@
+{% load static %}
+<aside class="main-sidebar sidebar-light-primary elevation-4">
+    <a href="/" class="brand-link elevation-4 text-center" style="height: 56px;padding-top: 15px;">
+        Quiz Test
+    </a>
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{% static 'img/profile-thumb.png' %}" class="img-circle elevation-2" alt="">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">Admin User</a>
+            </div>
+        </div>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item has-treeview menu-open">
+                    <a href="{% url 'quiz-view' %}" class="nav-link active">
+                        <img class="nav_ico" src="{% static 'img/nav_icos/dashboard_ico.png' %}">
+                        <p>
+                            Quiz
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview menu-open">
+                    <a href="{% url 'result-view' %}" class="nav-link active">
+                        <img class="nav_ico" src="{% static 'img/nav_icos/dashboard_ico.png' %}">
+                        <p>
+                            Results
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>

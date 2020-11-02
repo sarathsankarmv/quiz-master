@@ -1,0 +1,141 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% load filter_tags %}
+{% block title %} Dashboard {% endblock %}
+{% block content %}
+<section class="block_content">
+    {% include 'messages.html' %}
+    <div class="container-fluid p-0">
+        <div class="card">
+            <div class="card-body">
+                <div class="block_subtitle">
+                    <div class="row m-0 justify-content-md-end">
+                        <div class="d-flex align-items-center mr-auto">
+                            <h1 class="m-0">Listings</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="myTable">
+                        <thead>
+                            <tr>
+                                <th>Source</th>
+                                <th>Name</th>
+                                <th class="no-sort">Address</th>
+                                <th class="no-sort">Phone</th>
+                                <th class="no-sort">Rating</th>
+                                <th class="no-sort">Listed</th>
+                                <th class="no-sort">Status</th>
+                                <th width="120px" class="text-center no-sort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if page_list %}
+                                {% for page_data in page_list.data %}
+                                    <tr>
+                                        <td>Facebook</td>
+                                        <td>{{ page_data.name }}</td>
+                                        <td>
+                                            {% if page_data.location %}
+                                                {{ page_data.location.city }} {{ page_data.location.country }} {{ page_data.location.street }}
+                                            {% else %}
+                                                Not Available   
+                                            {% endif %}
+                                        <td>{{ page_data.phone|check_if_empty }}</td>
+                                        <td>{{ page_data.overall_star_rating|check_if_empty }}</td>
+                                        <td>
+                                            {% if page_data.is_published %}
+                                                Yes
+                                            {% else %}
+                                                No
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if page_data.verification_status == 'verified' %}
+                                                <i class="fa fa-check" aria-hidden="true" style="color: green;font-size: 20px;"></i>
+                                            {% else %}
+                                                <i class="fa fa-times" aria-hidden="true" style="color: red;font-size: 20px;"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td width="120px" class="text-center">  
+                                            <a href="#" onclick="editPageDetails('{{ page_data.id }}')"><img class="" src="{% static '/img/icons/edit_ico.png' %}"></a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            {% endif %}
+                            <tr>
+                                <td>Google</td>
+                                <td>ABC Dental</td>
+                                <td>2101 California st</td>
+                                <td>111.111.1111</td>
+                                <td>3/5</td>
+                                <td>Yes</td>
+                                <td><i class="fa fa-check" aria-hidden="true" style="color: green;font-size: 20px;"></i></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Yelp</td>
+                                <td>ABC Dental</td>
+                                <td>2101 California st</td>
+                                <td>111.111.1111</td>
+                                <td>2/5</td>
+                                <td>No</td>
+                                <td><i class="fa fa-times" aria-hidden="true" style="color: red;font-size: 20px;"></i></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Yahoo</td>
+                                <td>ABC Dental</td>
+                                <td>2101 California st</td>
+                                <td>111.111.1111</td>
+                                <td>3/5</td>
+                                <td>No</td>
+                                <td><i class="fa fa-times" aria-hidden="true" style="color: red;font-size: 20px;"></i></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Foursquare</td>
+                                <td>ABC Dental</td>
+                                <td>2101 California st</td>
+                                <td>111.111.1111</td>
+                                <td>3/5</td>
+                                <td>No</td>
+                                <td><i class="fa fa-check" aria-hidden="true" style="color: green;font-size: 20px;"></i></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block jsscript %}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#id_form_modal").on('hidden.bs.modal', function(){
+                $("#id_form_content").html('');
+            });
+        });
+        
+        function editPageDetails(page_uid){
+            url = "" + page_uid;
+            $.ajax({
+                url: url,
+                cache: false,
+                type: "GET",
+                success: function(response) {
+                    response = response.response;
+                    $("#id_form_content").html(response.form_data);
+                    $("#id_page_uid").val(page_uid)
+                    $("#id_form_modal").modal('show');
+                },
+                error: function(xhr) {
+                    console.log(xhr);
+                }
+            });
+        }
+    </script>
+{% endblock jsscript %}
